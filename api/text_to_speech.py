@@ -1,12 +1,11 @@
-# app/text_to_speech.py
 from flask import Blueprint, request, jsonify, send_file
 from gtts import gTTS
 from io import BytesIO
 from langdetect import detect
 
-tts_bp = Blueprint('text_to_speech', __name__)
+tts_route = Blueprint('text_to_speech', __name__)
 
-@tts_bp.route('/api/text-to-speech', methods=['POST'])
+@tts_route.route('/api/text-to-speech', methods=['POST'])
 def text_to_speech():
     data = request.json
     if not data or 'text' not in data:
