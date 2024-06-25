@@ -6,6 +6,8 @@ import io
 
 ocr_route = Blueprint('ocr_route', __name__)
 
+pytesseract.pytesseract.tesseract_cmd = r'../tesseract/tesseract.exe'
+
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
 
